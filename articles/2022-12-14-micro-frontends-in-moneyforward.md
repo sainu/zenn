@@ -5,6 +5,7 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["マイクロフロントエンド", "マイクロサービス", "フロントエンド", "アーキテクチャ", "アドベントカレンダー"]
 published: true
 published_at: 2022-12-14 09:00
+publication_name: "moneyforward"
 ---
 
 この記事は、[マネフォアドベントカレンダー2022](https://adventar.org/calendars/7397) 14日目の投稿です。
