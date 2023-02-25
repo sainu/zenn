@@ -18,5 +18,5 @@ npx zenn new:article --slug 記事のスラッグ --title タイトル --type id
 ## 記事のプレビュー
 
 ```bash
-npx zenn preview
+npm run preview
 ```
