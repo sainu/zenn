@@ -9,7 +9,7 @@ publication_name: "moneyforward"
 ---
 
 この記事は、[マネフォアドベントカレンダー2022](https://adventar.org/calendars/7397) 14日目の投稿です。
-13日目は [廣瀬](廣瀬) さんで「[チーム運営の仮説検証サイクルを高速化させるために、新卒スクラムマスターが取り組んだこと](https://moneyforward.com/engineers_blog/2022/12/13/shinsotsu-scrum-master/)」でした。
+13日目は [廣瀬](https://twitter.com/sho0126hiro) さんで「[チーム運営の仮説検証サイクルを高速化させるために、新卒スクラムマスターが取り組んだこと](https://moneyforward.com/engineers_blog/2022/12/13/shinsotsu-scrum-master/)」でした。
 本日は 岐阜在住で名古屋開発拠点の[sainu](https://github.com/sainu) が「マネーフォワードで実践したマイクロフロントエンド」について書きたいと思います。
 
 # はじめに
