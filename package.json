@@ -4,6 +4,7 @@
   "description": "zennの記事を管理するリポジトリ",
   "main": "index.js",
   "scripts": {
+    "preview": "npx zenn preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
