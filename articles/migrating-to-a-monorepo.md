@@ -1,5 +1,5 @@
 ---
-title: "プロジェクトのリポジトリたちをmonorepoへ移行した話"
+title: "言語が違う複数のリポジトリをmonorepoへ移行した話"
 emoji: "🚚"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["monorepo","polyrepo"]
