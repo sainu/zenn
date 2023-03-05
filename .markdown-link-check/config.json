@@ -6,5 +6,11 @@
     {
       "pattern": "^https://twitter.com"
     }
+  ],
+  "replacementPatterns": [
+    {
+      "pattern": "^/images",
+      "replacement": "{{BASEURL}}/images"
+    }
   ]
 }
