@@ -1,6 +1,7 @@
 name: Check Markdown Links
 
 on:
+  push:
   schedule:
     - cron: '0 0 * * *'
 
@@ -15,4 +16,6 @@ jobs:
         with:
           node-version-file: .node-version
       - run: npm ci
-      - run: npm run test:links
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          config-file: .markdown-link-check/config.json
