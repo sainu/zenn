@@ -4,7 +4,7 @@ emoji: "🚚"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["monorepo","polyrepo"]
 published: true
-published_at: 2023-03-06 09:00
+published_at: 2023-03-06 08:00
 publication_name: "moneyforward"
 ---
 # 導入
