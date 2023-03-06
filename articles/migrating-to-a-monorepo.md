@@ -338,7 +338,7 @@ defaults:
 
 ## GitHub Projectsの修正
 
-GitHub Projectsで`repo`でフィルターしていた箇所を`app`カスタム項目でフィルターするように修正しました。
+私たちはGitHub Projectsでプロジェクトを管理しているので、その中で`repo`でフィルターしていた箇所を`app`カスタム項目でフィルターするように修正しました。
 
 # 最後に
 
