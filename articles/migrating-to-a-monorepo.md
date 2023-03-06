@@ -272,8 +272,8 @@ workflows:
           base-revision: main # 差分を計算するために比較する先のrevision
           config-path: /tmp/workspace/merged.yml # mappingのパイプラインパラメーターを渡すYAMLファイル
           mapping: | # Syntax: <regex path> <pipeline parameter name> <value>
-            backend/.* build-backend true
-            web/.* build-frontend true
+            apps/backend/.* build-backend true
+            apps/web/.* build-web true
 ```
 
 ```yaml:.circleci/base.yml
