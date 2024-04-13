@@ -4,6 +4,7 @@ emoji: "🚢"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["storybook"]
 published: true
+publication_name: "moneyforward"
 ---
 以前、マネーフォワード クラウドの製品にマイクロフロントエンドを実装した記事を書きました。
 
