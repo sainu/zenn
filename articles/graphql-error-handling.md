@@ -8,10 +8,12 @@ published_at: 2024-12-05 09:00
 publication_name: "moneyforward"
 ---
 :::message
-この記事は、[Money Forward Engineers Advent Calendar 2024](https://adventar.org/calendars/9988)の5日目の記事です。
+この記事は、[Money Forward Engineers Advent Calendar 2024](https://adventar.org/calendars/9988)の12/5の記事です。12/4は[hktechno](https://x.com/hktechno)さんで[サーバーサイド Kotlin における技術選択](https://moneyforward-dev.jp/entry/2024/12/04/202934)でした。
 :::
 
-私のプロジェクトで採用しているGraphQLにおけるエラー設計について紹介します。
+こんにちは、マネーフォワードでエンジニアをしている [@sainu](https://www.sainu.me/) です。
+
+今回は私のプロジェクトで実践しているGraphQLのエラー設計について紹介します。
 
 このテーマは、GraphQLスキーマを導入する時に必ずと言っていいほど悩むポイントだと思います。なので、私がGraphQLを2年間運用してきて上手くいっていると感じている設計パターンを紹介することで、少しでも皆さんのお役に立てればなという気持ちでこの記事を書いています。
 
