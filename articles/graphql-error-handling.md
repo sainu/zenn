@@ -11,7 +11,7 @@ publication_name: "moneyforward"
 この記事は、[Money Forward Engineers Advent Calendar 2024](https://adventar.org/calendars/9988)の12/5の記事です。12/4は[hktechno](https://x.com/hktechno)さんで[サーバーサイド Kotlin における技術選択](https://moneyforward-dev.jp/entry/2024/12/04/202934)でした。
 :::
 
-こんにちは、マネーフォワードでエンジニアをしている [@sainu](https://www.sainu.me/) です。
+こんにちは、マネーフォワード名古屋拠点でエンジニアをしている [@sainu](https://www.sainu.me/) です。
 
 今回は私のプロジェクトで約2年間運用して比較的上手くいっていると自負しているGraphQLのエラー設計を紹介します。
 
