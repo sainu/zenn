@@ -1,5 +1,5 @@
 ---
-title: "私たちのGraphQLエラー設計を晒す"
+title: "正解だと思っているGraphQLエラー設計を晒す"
 emoji: "🍣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["graphql"]
