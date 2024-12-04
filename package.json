@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/sainu/zenn#readme",
   "dependencies": {
-    "zenn-cli": "^0.1.153"
+    "zenn-cli": "^0.1.158"
   },
   "devDependencies": {
     "markdown-link-check": "^3.12.1"
