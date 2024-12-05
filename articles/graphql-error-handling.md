@@ -361,7 +361,7 @@ mutation {
 
 ただ、10000行を超えるようなスキーマファイルになると、ファイルを操作すること自体が難しくなるかもしれません。その場合は、[GraphiQL](https://github.com/graphql/graphiql)や[GraphQL Playground](https://github.com/graphql/graphql-playground)などのツールを使うとスキーマの参照が容易になります。GitHub GraphQL APIの[エクスプローラー](https://docs.github.com/ja/graphql/overview/explorer)を参照するとイメージしやすいかもしれません。
 
-### Cons?: スキーマが膨大になっ変更が大変じゃない？
+### Cons?: スキーマが膨大になって変更が大変じゃない？
 
 コードファーストでスキーマを管理していますが、コードは適切な階層構造で管理されているので、スキーマの変更は難しくありません。むしろ、**コードファースト**でスキーマを管理することを推奨します。コードファーストであればコードの抽象化（モジュール機能など）によってスキーマの冗長さが解消され、スキーマ変更は容易です。
 
