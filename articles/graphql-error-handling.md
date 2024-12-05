@@ -68,7 +68,7 @@ GraphQL作者はなんと言っているか
 >一般的な考え方として、エラーは例外的なものであると考えられています。ユーザーデータは決してErrorとして表現されるべきではありません。もしユーザーがネガティブなガイダンスを提供する必要があるようなことをした場合、そのような情報はErrorとしてではなくDataとしてGraphQLで表現すべきです。Errorは常に開発者のエラーか例外的な状況（データベースがオフラインになったなど）を表すべきです。
 >[Validations that cannot be ran on the client side and the errors object #117](https://github.com/graphql/graphql-spec/issues/117#issuecomment-170180628)
 
-ここまでの整理とGraphQL作者のコメントを踏まえると、GraphQLスキーマにおいては以下のような設計が望ましいと言えます。
+ここまでの整理とGraphQL作者のコメントを踏まえると、GraphQLにおいては以下のような設計が望ましいと言えます。
 
 * ✅ 例外エラー: GraphQL Errors(Top-level "error"とも呼ばれる)に含める
 * ✅ ドメインエラー: スキーマの一部として設計する
