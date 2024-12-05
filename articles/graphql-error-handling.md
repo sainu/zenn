@@ -36,8 +36,8 @@ GraphQLのエラーハンドリングや設計は、GraphQLスキーマを導入
 
 私たちはこれらを「エラー」と一括りに呼びますが厳密には差分があります。
 
-* `Internal Server Error`/`Bad Gateway`: リクエストを**処理する前or時に予期せぬが起きた**
-* `Name Too Long`/`Name Was Taken`: リクエストを**正しく処理し予期した結果**
+* `Internal Server Error`/`Bad Gateway`: リクエストを**処理する前or時に予期せぬ事が起きた**
+* `Name Too Long`/`Name Was Taken`: リクエストを**正しく処理した結果**
 
 つまり、このように言い換えられます。
 
