@@ -1,5 +1,5 @@
 ---
-title: "GraphQLエラー設計の考え方とイケてる(と思う)設計"
+title: "GraphQLエラー設計の考え方とイケてる設計"
 emoji: "🍣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["graphql"]
@@ -17,7 +17,7 @@ publication_name: "moneyforward"
 
 今回は私のプロジェクトで約2年間運用して比較的上手くいっていると自負しているGraphQLのエラー設計を紹介します。
 
-GraphQLのエラーハンドリングや設計は、GraphQLスキーマを導入する時に必ずと言っていいほど悩むポイントだと思いますので、上手くいっている設計を共有できればと思います。
+GraphQLのエラーハンドリングや設計は、GraphQLスキーマを導入する時に必ずと言っていいほど悩むポイントだと思いますので、上手くいっている実績のある設計を紹介することで参考になればと思います。
 
 とは言っても、私も全てをゼロから考えたわけではありません。[Production Ready GraphQL](https://book.productionreadygraphql.com/)というGitHubでGraphQLサーバーを作った方が執筆した書籍をベースにしています。この本はGraphQLを運用する人にとってとても実践的な内容が書かれているので、是非一度読んでいただくことをお勧めします。英語で書かれているので、私は会社で輪読会を開催して読破しました。
 
@@ -215,9 +215,11 @@ or
 }
 ```
 
-このような状態を許容しないスキーマ定義をすることで、クライアントの型定義がより安全になります。これを防ぎたい場合は、Result Unionパターンを採用することが望ましいです。これは、[200 OK! Error Handling in GraphQL](https://sachee.medium.com/200-ok-error-handling-in-graphql-7ec869aec9bc)で紹介されています。
+このようなスキーマの場合、クライアントはどちらか一方しか存在しないという暗黙ルールの前提で実装しなければなりません。
 
-Result Unionパターンを採用すると、以下のようなスキーマ定義になります。
+このような状態を許容しないスキーマ定義をすることで、クライアントの実装はより安全になります。これを防ぎたい場合は、Result型パターンを採用することが望ましいです。これは、[200 OK! Error Handling in GraphQL](https://sachee.medium.com/200-ok-error-handling-in-graphql-7ec869aec9bc)で紹介されています。
+
+Result型パターンを採用すると、以下のようなスキーマ定義になります。
 
 ```graphql
 type Mutation {
@@ -247,7 +249,7 @@ union UpdateProductError =
   | OptimisticLockError
 ```
 
-このResult Unionパターンは、Mutationだけでなく、Queryにも適用することができます。
+このResult型パターンは、Mutationだけでなく、Queryにも適用することができます。
 
 ```graphql
 type Query {
@@ -291,7 +293,7 @@ union UpdateProductError =
   | OptimisticLockError <--- NEW!
 ```
 
-`enum`を使ってエラーコードなどで一元的に管理することもできますが、その場合、どのエラーコードがどのクエリで使われているかがわかりにくくなるため、私は`enum`よりも`union`を使うことをお勧めします。
+`enum`を使ってエラーコードなどで一元的に管理することもできますが、その場合、どのエラーコードがどのクエリで使われているかがわかりにくく、影響のあるクエリを特定するためにAPIの動作を別の情報源から知る必要があるため、私は`enum`よりも`union`を使うことをお勧めします。
 
 ```graphql
 type Mutation {
@@ -303,11 +305,11 @@ union CreateUserResult = User | CreateUserErrors
 union UpdateUserResult = User | UpdateUserErrors
 
 type CreateUserErrors {
-  errors: [UserError!]!
+  errors: [UserError!]! <-- ここにOPTIMISTIC_LOCKが追加？
 }
 
 type UpdateUserErrors {
-  errors: [UserError!]!
+  errors: [UserError!]! <--- それともここに追加？
 }
 
 type UserError {
@@ -322,7 +324,7 @@ enum ErrorCode {
 ```
 
 
-### ✅ Pros: エラー追加を検知できる
+### ✅ Pros: クエリの変更が不要
 
 クライアントは特定のドメインエラーを選択できるだけでなく、インターフェイスコントラクトにフォールバックできるため、新しいエラータイプを見逃すことがありません。
 
@@ -382,6 +384,6 @@ GraphQLにおける例外エラーとドメインエラーの扱いについて�
 
 いきなりこのような大掛かりに見えるスキーマ設計を導入するのはハードルに感じるかもしれません。より簡単で低コストにエラーを表現することも可能ですが、大抵のプロジェクトは数年のうちに想定外に大きく複雑になります。そして、複雑な要求に答えるのが辛くなっていき、リアーキテクチャなるコストを払うことになるのが常です。なので、私としては目先のコストに惑わされずに、初めから良いとされる設計を取り入れて柔軟で拡張が効く設計にしておくことは、結果的にプロジェクトのトータル運用コストを下げることにつながると考えています。
 
-あと、よく構造化された設計は複雑に見えても、一定の規則に従っているため、実際には予想以上に理解しやすいものです。私はこのような設計を取り入れることで、プロジェクトの運用が楽になったと感じています。
+あと、良く構造化された設計は複雑に見えても、一定の規則に従っているため、実際には予想以上に理解しやすいものです。私はこのような設計を取り入れることで、プロジェクトの運用が楽になったと感じています。
 
 最後に、GraphQLのエラー設計は、GraphQLスキーマを導入する時に必ずと言っていいほど悩むポイントだと思います。この記事が、GraphQLエラー設計に悩むエンジニアの一助になれば幸いです。
